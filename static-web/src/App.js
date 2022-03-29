@@ -14,13 +14,14 @@ function App() {
         }
       });
       const data = await resp.json();
+      console.log(data);
       setToons(data);
     })()
   }, [])
 
   let toonCards = toons.map(toon => (
     <div>
-      <div>{toon.id}: {toon.firstName} {toon.lastName}</div>
+      <div>{toon.id}: {toon.firstName} {toon.lastName}, {toon.occupation}</div>
     </div>
   ))
 
